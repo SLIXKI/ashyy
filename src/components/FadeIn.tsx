@@ -12,7 +12,7 @@ type Props = {
 }
 
 export default function FadeIn({ children, delay = 0, duration = 0.7, x = 0, y = 30, className = '', as = 'div' }: Props) {
-  const MotionTag = motion[as as any] || motion.div
+  const MotionTag = (motion as any)[as] || motion.div
   return (
     <MotionTag
       initial={{ opacity: 0, x, y }}
